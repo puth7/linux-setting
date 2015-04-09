@@ -1,0 +1,4 @@
+xbacklight =0
+xscreensaver -no-splash &
+xset -b
+conky
