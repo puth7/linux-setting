@@ -3,8 +3,8 @@ font 7x13
 use_xft no
 #on_bottom yes
 
-mpd_host 192.168.150.2
-mpd_port 6600
+#mpd_host 192.168.150.2
+#mpd_port 6600
 
 
 total_run_times 0
@@ -39,11 +39,11 @@ no_buffers yes
 
 uppercase no
 
-cpu_avg_samples 2
-net_avg_samples 2
+#cpu_avg_samples 2
+#net_avg_samples 2
 
 # Update interval in seconds
-update_interval 30
+update_interval 60
 
 override_utf8_locale no
 
@@ -101,9 +101,9 @@ ${color #7f8ed3} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem m
 # ${color #5b6dad}Current Status   ${color #7f8ed3}${execi 30 /home/hellfire/scripts/emerge-status.sh}
 #
 ${color #5b6dad}Local Weather (Eindhoven):
-${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH  temperature  60}C,  #
+${color #5b6dad}temp: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH  temperature  60}C,  #
 ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH   weather  60},  #
 ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH    cloud_cover  60}, #  
 ${color #5b6dad}wind: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     wind_speed 60} km/h
 ${color #5b6dad}humidity: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     humidity 60}%,  #
-${color #5b6dad}preassure:${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     pressure 60} milibar
+${color #5b6dad}preassure: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     pressure 60} milibar
