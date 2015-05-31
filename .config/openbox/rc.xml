@@ -265,12 +265,12 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed -->
+  <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed >
     <keybind key="A-Print">
       <action name="Execute">
-        <command>gnome-screenshot -w</command>
+        <command>scrot ~/pictures/screenshots/%Y-%m-%d-%T-screenshot.png</command>
       </action>
-    </keybind>
+    </keybind>  -->
 
     <!-- Keybindings for window switching -->
 
@@ -335,13 +335,13 @@
     <!-- Launch gnome-screenshot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>gnome-screenshot</command>
+        <command>scrot ~/pictures/screenshots/%Y-%m-%d-%T-screenshot.png</command>
       </action>
     </keybind>
     
     <keybind key="W-t">
       <action name="Execute">
-        <command>lxterminal</command>
+        <command>x-terminal-emulator</command>
       </action>
     </keybind>
      
@@ -359,11 +359,11 @@
  
     <keybind key="W-l">
       <action name="Execute">
-        <command>xscreensaver</command>
+        <command>slock</command>
       </action>
-      <action name="Execute">
+      <!--action name="Execute">
         <command>xscreensaver-command -lock</command>
-      </action>
+      </action -->
 
     </keybind>
 
@@ -373,6 +373,17 @@
       </action>
     </keybind>
 
+
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>claws-mail</command>
+      </action>
+    </keybind>
+
+
+<!--
+comment
+-->
     <keybind key="XF86TouchpadToggle">
       <action name="Execute">
         <command>synclient TouchpadOff=1</command>
@@ -475,6 +486,7 @@
       </action>
    </keybind>
 
+<!--
 <keybind key="XF86MonBrightnessUp">
      <action name="Execute">
        <command>xbacklight +10</command>
@@ -485,6 +497,7 @@
        <command>xbacklight -10</command>
      </action>
 </keybind>
+-->
 
 <keybind key="W-Left">
     <action name="UnmaximizeFull"/>

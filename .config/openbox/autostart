@@ -1,4 +1,5 @@
-xbacklight =0
-xscreensaver -no-splash &
+# xbacklight =0
+# xscreensaver -no-splash &
 xset -b
 conky
+xautolock -time 33 -locker slock 

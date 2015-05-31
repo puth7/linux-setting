@@ -54,9 +54,14 @@ override_utf8_locale no
 TEXT
 ${color #5b6dad}linux-$kernel${alignr}${color white}${time %H:%M}
 ${alignr}${color white}${time %A, %e %B %G}
+${color #5b6dad}Prayer schedule:
+${alignr}${color #5b6dad}Fajr Shorooq  Zuhr   Asr  Maghrib Isha 
+${alignr}${color #5b6dad}---------------------------------------
+${alignr}${color #7f8ed3}${execpi 36000 ipraytime  | awk 'NR==12 {print $2"   "$3"  "$4"  "$5"  "$6"  "$7}'}
+
 ${color #5b6dad}System:
 ${color #5b6dad} Uptime:${color #7f8ed3} $uptime ${color #5b6dad}  ${color #5b6dad}Battery: ${color #7f8ed3} ${battery_percent}%
-${color #5b6dad} CPU Frequency:${color #7f8ed3} $freq_g MHz ${color #5b6dad} Temp:  ${color #7f8ed3} ${acpitemp}C
+${color #5b6dad} CPU Frequency:${color #7f8ed3} $freq_g GHz ${color #5b6dad} Temp:  ${color #7f8ed3} ${acpitemp}C
 ${color #5b6dad} CPU Usage:${color #7f8ed3} $cpu% ${cpubar}
 #${color #000000}${cpugraph cpu0 32,309 000000 7f8ed3}
 ${color #5b6dad} RAM Usage:${color #7f8ed3} $mem/$memmax - $memperc% ${membar}
@@ -64,16 +69,17 @@ ${color #5b6dad} Swap Usage:${color #7f8ed3} $swap/$swapmax - $swapperc% ${swapb
 ${color #5b6dad} Processes:${color #7f8ed3} $processes  ${color #5b6dad}Running:${color #7f8ed3} $running_processes
 
 ${color #5b6dad}Networking:
- ${color #5b6dad}Down:${color #7f8ed3} ${downspeed wlan0}/s${color #5b6dad}${offset 80}Up:${color #7f8ed3} ${upspeed wlan0}/s
+ ${color #5b6dad}Down (W):${color #7f8ed3} ${downspeed wlan0}/s${color #5b6dad}${offset 40}Up (W):${color #7f8ed3} ${upspeed wlan0}/s
+ ${color #5b6dad}Down (L):${color #7f8ed3} ${downspeed eth0}/s${color #5b6dad}${offset 40}Up (L):${color #7f8ed3} ${upspeed eth0}/s
 #${color #000000}${downspeedgraph wlan0 32,150 000000 7f8ed3} ${color #000000}${upspeedgraph wlan0 32,150 000000 7f8ed3}
  #${color #5b6dad}Address: ${color #7f8ed3}${addr wlan0}${alignr}${color #5b6dad}TCP Connections: ${color #7f8ed3}${tcp_portmon 1 65535 count}
 
 ${color #5b6dad}File Systems:
  ${color #5b6dad}/ ${color #7f8ed3}${fs_used /}/${fs_size /} ${color #7f8ed3}${fs_bar /}
  ${color #5b6dad}~ ${color #7f8ed3}${fs_used /home/puth/}/${fs_size /home/puth/} ${color #7f8ed3}${fs_bar /home/puth/}
- ${color #5b6dad}dext1 ${color #7f8ed3}${fs_used /media/dext1}/${fs_size /media/dext1} ${color #7f8ed3}${fs_bar /media/dext1}
- ${color #5b6dad}dfat1 ${color #7f8ed3}${fs_used /media/dfat1}/${fs_size /media/dfat1} ${color #7f8ed3}${fs_bar /media/dfat1}
- ${color #5b6dad}dfat2 ${color #7f8ed3}${fs_used /media/dfat2}/${fs_size /media/dfat2} ${color #7f8ed3}${fs_bar /media/dfat2}
+ ${color #5b6dad}/opt ${color #7f8ed3}${fs_used /opt}/${fs_size /opt} ${color #7f8ed3}${fs_bar /opt}
+ ${color #5b6dad}1dfat ${color #7f8ed3}${fs_used /media/1dfat}/${fs_size /media/1dfat} ${color #7f8ed3}${fs_bar /media/1dfat}
+ ${color #5b6dad}2dfat ${color #7f8ed3}${fs_used /media/2dfat}/${fs_size /media/2dfat} ${color #7f8ed3}${fs_bar /media/2dfat}
 
 #${color #5b6dad}Monitors          CPU     FAN1   FAN2
 #${color #7f8ed3} ${acpitemp}C     ${}    ${acpifan}
@@ -101,9 +107,10 @@ ${color #7f8ed3} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem m
 # ${color #5b6dad}Current Status   ${color #7f8ed3}${execi 30 /home/hellfire/scripts/emerge-status.sh}
 #
 ${color #5b6dad}Local Weather (Eindhoven):
-${color #5b6dad}temp: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH  temperature  60}C,  #
+${color #5b6dad}temp: ${color #7f8ed3} ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ EHEH temperature  60}C,  #
 ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH   weather  60},  #
 ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH    cloud_cover  60}, #  
 ${color #5b6dad}wind: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     wind_speed 60} km/h
 ${color #5b6dad}humidity: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     humidity 60}%,  #
 ${color #5b6dad}preassure: ${color #7f8ed3}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/  EHEH     pressure 60} milibar
+#Solo:WARQ, Jakarta:WIHH
